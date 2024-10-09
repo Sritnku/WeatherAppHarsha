@@ -16,6 +16,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+// View Model for Home Screen
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val locationTracker: LocationTracker,

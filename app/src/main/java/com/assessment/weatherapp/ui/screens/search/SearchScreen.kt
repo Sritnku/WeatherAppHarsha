@@ -25,11 +25,19 @@ import com.assessment.weatherapp.ui.screens.weather.WeatherScreen
 
 @Composable
 fun SearchScreen(onHome: () -> Unit, viewModel: SearchCityViewModel = hiltViewModel()) {
-    val cityName: MutableState<String> = remember {
-        mutableStateOf("")
-    }
+
+    // Get the last searched city from the ViewModel
+    val lastSearchedCity = viewModel.lastSearchedCity.value
+
+    // Mutable state for cityName initialized with the last searched city
+    val cityName: MutableState<String> = remember { mutableStateOf(lastSearchedCity) }
+
+    // Observe the weather data from ViewModel
     val result = viewModel.weatherData.value
+
+    // Scroll state for the screen
     val scrollStateScreen = rememberScrollState()
+
 
     Surface(
         modifier = Modifier.fillMaxSize()

@@ -15,6 +15,7 @@ import com.assessment.weatherapp.ui.screens.home.HomeViewModel
 import com.assessment.weatherapp.ui.screens.weather.WeatherScreen
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
+// Home Screen
 @OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun HomeScreen(navController: NavHostController, homeViewModel: HomeViewModel) {

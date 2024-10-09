@@ -9,6 +9,7 @@ import javax.inject.Inject
 //a repository class that handles data operations and acts as a single source of truth:
 class WeatherRepository @Inject constructor(private val weatherApiService: WeatherApiService) {
 
+    // Get Weather by City
     suspend fun getWeather(cityName: String): NetworkResult<WeatherResponse> {
 
         val response = weatherApiService.getWeather(cityName)
@@ -25,6 +26,7 @@ class WeatherRepository @Inject constructor(private val weatherApiService: Weath
         }
     }
 
+    // Get Weather by co-ordinates
     suspend fun getWeatherByLocation(
         latitude: Double,
         longitude: Double
